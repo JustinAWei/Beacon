@@ -24,6 +24,7 @@
               %p Not checked out
             - else
               %p Checked out by #{item.employee_name}
+              %p Checked out for #{time_ago_in_words(item.updated_at)}
           .card-action
             = link_to item_qr_path(item), target: '_blank' do
               .btn View QR code
