@@ -21,7 +21,7 @@ class AccountController < ApplicationController
   end
 
   def dashboard
-    @items = current_account.items
+    @items = current_account.items.order(updated_at: :desc)
   end
 
   private
