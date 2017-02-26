@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: 'session#new'
 
   #Account creation
@@ -12,6 +11,6 @@ Rails.application.routes.draw do
   post '/login' => 'session#create'
   get '/logout' => 'session#destroy'
 
-  get '/employees/:id/checkout', to: 'items#scan'
+  get '/checkout', to: 'items#scan'
   post '/employees/:id/checkout', to: 'items#checkout'
 end
