@@ -10,11 +10,12 @@
 .container
   %h3.header Inventory Dashboard for <span class="underline">#{current_account.name}</span>
   .items.row
-    .col.s10
+    .col.l10.m8.s4
       %h4.header Your Items
-    .col.s2.right-align
+    .col.l1.m2.s4.right-align
       %a.waves-effect.waves-light.btn.right-align{href: '#modal'} New
-      /%a.waves-effect.waves-light.btn{href: '/scan'} Scan
+    .col.l1.m2.s4.right.align
+      %a.waves-effect.waves-light.btn.right-align{href: '/scan'} Scan
   .row
     - @items.each do |item|
       .col.s12.l4.m6
