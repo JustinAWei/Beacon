@@ -17,6 +17,7 @@ class AccountController < ApplicationController
   end
 
   def dashboard
+    @items = current_account.items
   end
 
   private

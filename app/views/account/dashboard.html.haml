@@ -7,30 +7,16 @@
         %label{for: 'item_name'} Name
       = f.submit 'Submit', class: 'waves-effect waves-light btn'
 
-
-%h1 Dashboard
-%ul.collection
-  %li.collection-item.dismissable
-    %div
-      Alvin
-      %a.secondary-content{:href => "#!"}
-        %i.material-icons send
-  %li.collection-item.dismissable
-    %div
-      Alvin
-      %a.secondary-content{:href => "#!"}
-        %i.material-icons send
-  %li.collection-item.dismissable
-    %div
-      Alvin
-      %a.secondary-content{:href => "#!"}
-        %i.material-icons send
-  %li.collection-item.dismissable
-    %div
-      Alvin
-      %a.secondary-content{:href => "#!"}
-        %i.material-icons send
-
-
 / Modal Trigger
 %a.waves-effect.waves-light.btn{:href => "#modal1"} Modal
+
+
+.items
+  .container
+    %ul.collection
+      - @items.each do |i|
+        %li.collection-item.dismissable
+          = i.name
+          %div
+            %a.secondary-content{:href => "#!"}
+              %i.material-icons send
