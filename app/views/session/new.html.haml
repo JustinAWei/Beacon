@@ -1,6 +1,7 @@
 .main
   .wrapper.section.center
-    %h3.header.center Beacon
+    = link_to root_path do
+      %h3.header.center Beacon
     %h5.header.center Login to your Dashboard
     = form_for :account, url:'/account' do |f|
       .input-field
