@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def create
-
+    
   end
 
   def scan
@@ -22,5 +22,4 @@ class ItemsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def item_params
 end
