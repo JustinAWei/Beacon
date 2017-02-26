@@ -1,11 +1,12 @@
+#reader{style: 'width:0;height:0;'}
 .main
   .wrapper
     .checkout.section.center
       %h3.header.center Beacon
       %h5.header.center Inventory management for <span class="bold">Freeman</span>
       .input-field
-        %input.item#item_name{type: 'text'}
-        %label{for: 'item_name'} Item Name
+        %input#item{disabled: true, type: 'text', value: 'First, scan your item'}
+        %label.active{for: 'item'} Item ID
       .input-field.employee
         %input#employee_name{type: 'text'}
         %label{for: 'employee_name'} Employee Name
