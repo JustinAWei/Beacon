@@ -5,7 +5,7 @@
 $primary-color: #2980B9 !default;
 
 .logo {
-  padding: 7px;
+  padding: 0 7px;
   background: #fff;
   color: $primary-color;
 }
@@ -80,5 +80,19 @@ $primary-color: #2980B9 !default;
    /* icon prefix focus color */
    .input-field .prefix.active {
      color: #fff;
+   }
+
+   .bottom {
+     font-size: 1.2rem;
+     opacity: 0.8;
+     transition: opacity 0.15s ease-in-out;
+     color: #fff;
+     position: absolute;
+     bottom: 10px;
+     text-align: center;
+
+     &:hover {
+       opacity: 1;
+     }
    }
 }
