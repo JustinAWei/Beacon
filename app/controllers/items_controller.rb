@@ -1,9 +1,13 @@
 class ItemsController < ApplicationController
 
   def create
+    puts current_account
     item = current_account.items.create(item_params)
+    puts 'asad'
     item.checked_out = false
-    item.save
+    puts 'false'
+    item.save!
+    puts 'saved'
     redirect_to dashboard_path
   end
 

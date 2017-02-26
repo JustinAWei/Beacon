@@ -2,7 +2,7 @@
   .wrapper.section.center
     %h3.header.center Beacon
     %h5.header.center Login to your Dashboard
-    = form_for :account do |f|
+    = form_for :account, url:'/account' do |f|
       .input-field
         = f.text_field :email
         %label{for: 'account_email'} Email
