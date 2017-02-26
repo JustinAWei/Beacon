@@ -2,6 +2,11 @@
   .wrapper
     .checkout.section.center
       %h3.header.center Beacon
-      %h6.header.center Inventory management for <span class="bold">Freeman</span>
-      .row
-        .input-field.col.s12
+      %h5.header.center Inventory management for <span class="bold">Freeman</span>
+      .input-field
+        %input.item#item_name{type: 'text'}
+        %label{for: 'item_name'} Item Name
+      .input-field.employee
+        %input#employee_name{type: 'text'}
+        %label{for: 'employee_name'} Employee Name
+      %a.waves-effect.waves-light.btn Check out item
