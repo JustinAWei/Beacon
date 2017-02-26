@@ -11,19 +11,8 @@ Rails.application.routes.draw do
   post '/login', to: 'session#create'
   get '/logout', to: 'session#destroy'
 
-<<<<<<< HEAD
-  #Employees
-  get '/employees', to: 'employees#show'
-  post '/employees', to: 'employees#create'
-
   #Items
-  get 'items', to: 'items#show'
   post '/items', to: 'items#create'
-
-  #Checkout
-  get '/employees/:id/checkout', to: 'items#scan'
-=======
   get '/checkout', to: 'items#scan'
->>>>>>> 04b358e21ac7a7446dfa9abf6132a7e699f62c7f
-  post '/employees/:id/checkout', to: 'items#checkout'
+  post '/checkout', to: 'items#checkout'
 end
