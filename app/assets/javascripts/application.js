@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require materialize-sprockets
+//= require jsqrcode-combined.min.js
+//= require html5-qrcode.min.js
 //= require_tree .
