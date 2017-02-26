@@ -6,13 +6,18 @@
       .input-field
         = f.text_field :email
         %label{for: 'account_email'} Email
-      .input-field
-        = f.text_field :name
-        %label{for: 'account_name'} Company Name
+      - if @account_name
+        .input-field
+          = f.text_field :name, value: @account_name
+          %label.active{for: 'account_name'} Company Name
+      - else
+        .input-field
+          = f.text_field :name
+          %label{for: 'account_name'} Company Name
       .input-field
         = f.password_field :password
         %label{for: 'account_password'} Password
       .input-field
         = f.password_field :password_confirmation
         %label{for: 'account_password_confirmation'} Confirm Password
-      = f.submit 'Submit', class: 'waves-effect waves-light btn'
+      = f.submit 'Get Started', class: 'waves-effect waves-light btn'
