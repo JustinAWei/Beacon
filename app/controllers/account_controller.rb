@@ -3,26 +3,21 @@ class AccountController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
+    account = Account.new(account_params)
 
-    if user.save
-      redirect_to user_dashboard(current_user)
+    if account.save
+      session[:account_id] = account.id
+      redirect_to dashboard_path
     else
-      redirect_to user_login
+      redirect_to signup_path
     end
-  end
-
-
-  def destroy
   end
 
   def dashboard
   end
 
   private
-
-  def account_params
-    params.require(:account).permit(:email, :password)
-  end
-
+    def account_params
+      params.require(:account).permit(:email, :password)
+    end
 end
