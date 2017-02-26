@@ -5,16 +5,26 @@ $(document).on 'turbolinks:load', ->
   $('#reader').html5_qrcode (data) ->
     $('#item').val(data)
     $.ajax {
-      url: '/items/' + data + '/name',
+      url: '/items/' + data + '/checked_out',
       method: 'GET',
       json: true,
       success: (resp) ->
-        $('#item').val(data + ' - ' + resp['name'])
+        $('.btn').removeClass('disabled')
+        if resp['checked_out']
+          $('.btn').text('Check In')
+          $('form').attr('action', '/checkin')
+        else
+          $('.employee').stop().slideDown();
+          $('.employee > input').focus()
+          $('.btn').text('Check Out')
+        $.ajax {
+          url: '/items/' + data + '/name',
+          method: 'GET',
+          json: true,
+          success: (resp) ->
+            $('#item').val(data + ' - ' + resp['name'])
+        }
     }
-    $('.employee').stop().slideDown();
-    $('.employee > input').focus()
-    $('.btn').removeClass('disabled')
-    $('.btn').text('Check Out')
   , ((error) ->), ((videoError) ->)
   $('.btn').click ->
     $('#item').removeAttr('disabled')
