@@ -1,5 +1,8 @@
 class AccountController < ApplicationController
   def new
+    if params[:account] && params[:account][:name]
+      @account_name = params[:account][:name]
+    end
   end
 
   def create

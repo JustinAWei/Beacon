@@ -1,0 +1,84 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-color: #2980B9 !default;
+
+.logo {
+  padding: 7px;
+  background: #fff;
+  color: $primary-color;
+}
+
+.masthead {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #2980b9; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #2980b9 0%, #2989d8 50%, #3285b5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #2980b9 0%,#2989d8 50%,#3285b5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #2980b9 0%,#2989d8 50%,#3285b5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2980b9', endColorstr='#3285b5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  .wrapper {
+    width: 100%;
+    max-width: 800px;
+
+    color: #fff;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn {
+    background: rgba(255, 255, 255, 0.8);
+    transition: background 0.15s ease-in-out;
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+    }
+  }
+
+  input {
+    border: 1px solid #fff;
+  }
+
+  /* label color */
+   .input-field label {
+     color: rgba(255, 255, 255, 0.7);
+     color: rfff;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: rgba(255, 255, 255, 1);
+   }
+   .input-field input[type=text] {
+     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+     box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.5);
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #fff;
+     box-shadow: 0 1px 0 0 #fff;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #fff;
+     box-shadow: 0 1px 0 0 #fff;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #fff;
+     box-shadow: 0 1px 0 0 #fff;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #fff;
+   }
+}
