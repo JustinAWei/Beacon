@@ -7,7 +7,6 @@ $secondary-color: #2980B9 !default;
 
 .main {
   height: 100vh;
-  text-align: center;
 
   display: flex;
   align-items: center;
@@ -19,21 +18,37 @@ $secondary-color: #2980B9 !default;
 }
 
 .checkout.section {
-  max-width: 350px;
+  width: 250px;
   margin: auto;
 
   .header {
     color: $primary-color;
   }
 
-  h1 {
+  h3.header {
+    padding: 7px;
+    margin: auto;
+    margin-bottom: 1rem;
+    display: inline-block;
+
     background: $primary-color;
     color: #fff;
-    display: inline-block;
-    font-size: 2rem;
   }
 
-  h6 {
-    font-size: 1.25rem;
+  h5.header {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .input-field {
+    width: 100%;
+  }
+
+  .employee {
+    display: none;
+  }
+
+  .btn {
+    width: 100%;
   }
 }
