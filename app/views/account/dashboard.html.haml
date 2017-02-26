@@ -14,6 +14,7 @@
       %h4.header Your Items
     .col.s2.right-align
       %a.waves-effect.waves-light.btn.right-align{href: '#modal'} New
+      /%a.waves-effect.waves-light.btn{href: '/scan'} Scan
   .row
     - @items.each do |item|
       .col.s12.l4.m6
@@ -22,9 +23,8 @@
             %span.card-title= item.name
             - if item.employee_name.nil?
               %p Not checked out
-            - else
-              %p Checked out by #{item.employee_name}
-              %p Checked out for #{time_ago_in_words(item.updated_at)}
+            - elsif
+              %p Checked out by #{item.employee_name} for #{time_ago_in_words(item.updated_at)}.
           .card-action
             = link_to item_qr_path(item), target: '_blank' do
               .btn View QR code
