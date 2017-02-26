@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: track_development
-  username: justin
-  password: guoheng
+  username: lowercase
+  password: Sweden#3275
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
