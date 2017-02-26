@@ -15,12 +15,23 @@ class ItemsController < ApplicationController
     render json: {name: @item.name}
   end
 
+  def checked_out
+    @item = Item.find(params[:id])
+    render json: {checked_out: !@item.employee_name.nil?}
+  end
+
   def scan
   end
 
   def checkout
     item = current_account.items.find(Integer(params[:item_name].split('-')[0]))
     item.update_attributes(employee_name: params[:employee_name])
+    redirect_to scan_path
+  end
+
+  def checkin
+    item = current_account.items.find(Integer(params[:item_name].split('-')[0]))
+    item.update_attributes(employee_name: nil)
     redirect_to scan_path
   end
 
