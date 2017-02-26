@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'session#new'
 
   #Accounts
-  post '/', to: 'account#create'
+  post '/account', to: 'account#create'
   get '/dashboard', to: 'account#dashboard', as: 'dashboard'
   get '/signup', to: 'account#new', as: 'signup'
 
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'session#destroy'
 
   #Items
-  post '/items', to: 'items#create'
+  post '/items', to: 'items#create', as: 'create_item'
   get '/checkout', to: 'items#scan'
   post '/checkout', to: 'items#checkout'
 end

@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170226053623) do
-=======
-ActiveRecord::Schema.define(version: 20170226054738) do
->>>>>>> 512e43825b58af5150fd4123b896981a3d6b65da
+ActiveRecord::Schema.define(version: 20170226061657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,27 +23,15 @@ ActiveRecord::Schema.define(version: 20170226054738) do
     t.string   "name"
   end
 
-  create_table "employees", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "account_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_employees_on_account_id", using: :btree
-  end
-
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.integer  "account_id"
-    t.integer  "employee_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.boolean  "checked_out"
     t.string   "employee_name"
     t.index ["account_id"], name: "index_items_on_account_id", using: :btree
-    t.index ["employee_id"], name: "index_items_on_employee_id", using: :btree
   end
 
-  add_foreign_key "employees", "accounts"
   add_foreign_key "items", "accounts"
-  add_foreign_key "items", "employees"
 end

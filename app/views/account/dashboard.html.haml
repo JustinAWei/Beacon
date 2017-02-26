@@ -1,8 +1,36 @@
+/ Modal Structure
+#modal1.modal
+  .modal-content
+    = form_for :item, url:create_item_path do |f|
+      .input-field
+        = f.text_field :name
+        %label{for: 'item_name'} Name
+      = f.submit 'Submit', class: 'waves-effect waves-light btn'
+
+
 %h1 Dashboard
+%ul.collection
+  %li.collection-item.dismissable
+    %div
+      Alvin
+      %a.secondary-content{:href => "#!"}
+        %i.material-icons send
+  %li.collection-item.dismissable
+    %div
+      Alvin
+      %a.secondary-content{:href => "#!"}
+        %i.material-icons send
+  %li.collection-item.dismissable
+    %div
+      Alvin
+      %a.secondary-content{:href => "#!"}
+        %i.material-icons send
+  %li.collection-item.dismissable
+    %div
+      Alvin
+      %a.secondary-content{:href => "#!"}
+        %i.material-icons send
 
-.ui.item.button
 
-.ui.modal
-  = form_for :items do |f|
-    = f.text_field :name
-    = f.submit 'Create'
+/ Modal Trigger
+%a.waves-effect.waves-light.btn{:href => "#modal1"} Modal
