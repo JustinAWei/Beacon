@@ -1,6 +1,18 @@
-%h1 Signup
-
-= form_for :account do |f|
-  = f.text_field :email
-  = f.password_field :password
-  = f.submit 'Submit'
+.main
+  .wrapper.section.center
+    %h3.header.center Beacon
+    %h5.header.center Make an Account
+    = form_for :account do |f|
+      .input-field
+        = f.text_field :email
+        %label{for: 'account_email'} Email
+      .input-field
+        = f.text_field :name
+        %label{for: 'account_name'} Company Name
+      .input-field
+        = f.password_field :password
+        %label{for: 'account_password'} Password
+      .input-field
+        = f.password_field :password_confirmation
+        %label{for: 'account_password_confirmation'} Confirm Password
+      = f.submit 'Submit', class: 'waves-effect waves-light btn'
