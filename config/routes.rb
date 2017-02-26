@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'session#new'
+  root to: 'home#index'
 
   #Accounts
   post '/account', to: 'account#create'
