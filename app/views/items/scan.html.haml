@@ -1,13 +1,11 @@
 #reader{style: 'width:0;height:0;'}
 .main
-  .wrapper
-    .checkout.section.center
-      %h3.header.center Beacon
-      %h5.header.center Inventory management for <span class="bold">Freeman</span>
-      .input-field
-        %input#item{disabled: true, type: 'text', value: 'First, scan your item'}
-        %label.active{for: 'item'} Item ID
-      .input-field.employee
-        %input#employee_name{type: 'text'}
-        %label{for: 'employee_name'} Employee Name
-      %a.waves-effect.waves-light.btn Check out item
+  .wrapper.section.center
+    %h3.header.center Beacon
+    %h5.header.center Inventory management for <span class="bold">Freeman</span>
+    .input-field
+      %input#item{disabled: true, type: 'text', value: 'Item ID'}
+    .input-field.employee
+      %input#employee_name{type: 'text'}
+      %label{for: 'employee_name'} Employee Name
+    %a.disabled.waves-effect.waves-light.btn First, scan your item
