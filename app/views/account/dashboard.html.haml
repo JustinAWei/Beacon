@@ -1,2 +1,8 @@
-%h1 Account#dashboard
-%p Find me in app/views/account/dashboard.html.haml
+%h1 Dashboard
+
+.ui.item.button
+
+.ui.modal
+  = form_for :items do |f|
+    = f.text_field :name
+    = f.submit 'Create'
