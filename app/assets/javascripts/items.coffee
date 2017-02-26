@@ -5,4 +5,7 @@ $(document).on 'turbolinks:load', ->
   $('#reader').html5_qrcode (data) ->
     $('#item').val(data)
     $('.employee').stop().slideDown();
+    $('.employee > input').focus()
+    $('a.btn').removeClass('disabled')
+    $('a.btn').text('Check Out')
   , ((error) ->), ((videoError) ->)
