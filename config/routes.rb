@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
 
-  root to: 'account#new'
+  root to: 'session#new'
 
-  post '/account' => 'account#create'
+  #Account creation
+  post '/' => 'account#create'
   get '/dashboard' => 'account#dashboard', as: 'dashboard'
   get '/signup' => 'account#new', as: 'signup'
 
+  #Session creation
   get '/login' => 'session#new', as: 'login'
   post '/login' => 'session#create'
-  post 'logout' => 'session#destroy'
+  get '/logout' => 'session#destroy'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/employers/:id/checkout', to: 'items#checkout'
+  get '/employees/:id/checkout', to: 'items#scan'
+  post '/employees/:id/checkout', to: 'items#checkout'
 end

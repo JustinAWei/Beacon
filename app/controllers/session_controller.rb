@@ -3,8 +3,8 @@ class SessionController < ApplicationController
   end
 
   def create
-    account = Account.find_by_email(params[:email])
-    if account && account.authenticate(params[:password])
+    account = Account.find_by_email(params[:account][:email])
+    if account && account.authenticate(params[:account][:password])
       session[:account_id] = account.id
       redirect_to dashboard_path
     else
