@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   #Items
   post '/items', to: 'items#create', as: 'create_item'
-  get '/checkout', to: 'items#scan'
-  post '/checkout', to: 'items#checkout'
+  get '/items/:id', to: 'items#qr', as: 'item_qr'
+  get '/items/:id/name', to: 'items#name', as: 'item_name'
+  get '/scan', to: 'items#scan', as: 'scan'
+  post '/checkout', to: 'items#checkout', as: 'checkout'
 end

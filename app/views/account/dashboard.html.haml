@@ -1,22 +1,29 @@
-/ Modal Structure
-#modal1.modal
+#modal.modal
   .modal-content
+    %h4.header Register a new item
     = form_for :item, url:create_item_path do |f|
       .input-field
         = f.text_field :name
         %label{for: 'item_name'} Name
       = f.submit 'Submit', class: 'waves-effect waves-light btn'
 
-/ Modal Trigger
-%a.waves-effect.waves-light.btn{:href => "#modal1"} Modal
-
-
-.items
-  .container
-    %ul.collection
-      - @items.each do |i|
-        %li.collection-item.dismissable
-          = i.name
-          %div
-            %a.secondary-content{:href => "#!"}
-              %i.material-icons send
+.container
+  %h3.header Inventory Dashboard for <span class="underline">#{current_account.name}</span>
+  .items.row
+    .col.s10
+      %h4.header Your Items
+    .col.s2.right-align
+      %a.waves-effect.waves-light.btn.right-align{href: '#modal'} New
+  .row
+    - @items.each do |item|
+      .col.s12.l4.m6
+        .card
+          .card-content
+            %span.card-title= item.name
+            - if item.employee_name.nil?
+              %p Not checked out
+            - else
+              %p Checked out by #{item.employee_name}
+          .card-action
+            = link_to item_qr_path(item), target: '_blank' do
+              .btn View QR code

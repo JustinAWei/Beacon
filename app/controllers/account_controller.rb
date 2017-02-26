@@ -1,7 +1,11 @@
 class AccountController < ApplicationController
   def new
-    if params[:account] && params[:account][:name]
-      @account_name = params[:account][:name]
+    if current_account
+      redirect_to dashboard_path
+    else
+      if params[:account] && params[:account][:name]
+        @account_name = params[:account][:name]
+      end
     end
   end
 
