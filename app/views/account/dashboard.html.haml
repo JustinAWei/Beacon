@@ -24,7 +24,10 @@
             %span.card-title= item.name
             - if item.employee_name.nil?
               %p Not checked out
-            - elsif
+            - elsif item.updated_at > 10.hours
+              %p{style:'color: red'}
+                Checked out by #{item.employee_name} for #{time_ago_in_words(item.updated_at)}.
+            - else
               %p Checked out by #{item.employee_name} for #{time_ago_in_words(item.updated_at)}.
           .card-action
             = link_to item_qr_path(item), target: '_blank' do
