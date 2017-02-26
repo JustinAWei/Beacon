@@ -1,0 +1,39 @@
+// Place all the styles related to the Items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-color: #2980B9 !default;
+$secondary-color: #2980B9 !default;
+
+.main {
+  height: 100vh;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.checkout.section {
+  max-width: 350px;
+  margin: auto;
+
+  .header {
+    color: $primary-color;
+  }
+
+  h1 {
+    background: $primary-color;
+    color: #fff;
+    display: inline-block;
+    font-size: 2rem;
+  }
+
+  h6 {
+    font-size: 1.25rem;
+  }
+}
