@@ -1,11 +1,13 @@
-#reader{style: 'width:0;height:0;'}
+#reader{style: 'width:0px;height:0px;'}
 .main
   .wrapper.section.center
-    %h3.header.center Beacon
-    %h5.header.center Inventory management for <span class="bold">Freeman</span>
-    .input-field
-      %input#item{disabled: true, type: 'text', value: 'Item ID'}
-    .input-field.employee
-      %input#employee_name{type: 'text'}
-      %label{for: 'employee_name'} Employee Name
-    %a.disabled.waves-effect.waves-light.btn First, scan your item
+    %h3.header.center.checkout.logo Beacon
+    %h5.header.center Inventory management for <span class="bold">#{current_account.name}</span>
+    = form_tag checkout_path, method: :post do
+      .input-field
+        %input#item{disabled: true, name: 'item_name', type: 'text', value: 'Item ID'}
+      .input-field.employee
+        %input#employee_name{type: 'text', name: 'employee_name'}
+        %label{for: 'employee_name'} Employee Name
+      %button.disabled.waves-effect.waves-light.btn{type: 'submit'} First, scan your item
+      = link_to 'Or, go to your dashboard', dashboard_path, class: 'dashboard'

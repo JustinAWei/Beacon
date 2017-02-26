@@ -2,6 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.items{
-  background-color: $primary;
+$primary-color: #2980B9 !default;
+
+.modal {
+  color: $primary-color;
+}
+
+body {
+  background: #FCFCFC;
+}
+
+.container {
+  color: $primary-color;
+
+  .header {
+    font-weight: normal;
+
+    .underline {
+      font-weight: bold;
+    }
+  }
+
+  .items.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
