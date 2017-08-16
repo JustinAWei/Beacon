@@ -1,9 +1,9 @@
+# Beacon
+Effortless inventory management - beacon uses QR codes and online scanning to integrate all of your inventory into a state-of-the-art dashboard.
+
 <p align="center">
   <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/000/481/890/datas/gallery.jpg"/>
 </p>
-
-# Beacon
-Effortless inventory management - beacon uses QR codes and online scanning to integrate all of your inventory into a state-of-the-art dashboard.
 
 # Inspiration
 We were inspired by a problem: tracking inventory is complicated and frustrating. Most companies still rely on expensive manual labor or costly, unstable sensor systems. Even with these safeguards in place, it can still take weeks to identify lost items, costing companies millions annually. There’s no fast, simple way to keep track of your inventory. That's where Beacon comes in.
